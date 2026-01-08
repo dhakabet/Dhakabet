@@ -10,9 +10,10 @@
   --bg:#050505;
   --glass:rgba(255,255,255,0.08);
   --glass-border:rgba(255,255,255,0.18);
-  --green:#00ff66;
+  --red:#ff2d2d;
+  --red-dark:#b30000;
   --text:#ffffff;
-  --muted:#9ca3af;
+  --muted:#b5b5b5;
   --blur:18px;
 }
 
@@ -25,18 +26,18 @@
 
 body{
   background:
-    radial-gradient(circle at top,#00331a,#050505 60%);
+    radial-gradient(circle at top,#2a0000,#050505 60%);
   color:var(--text);
   min-height:100vh;
 }
 
-/* ===== GLASS BASE ===== */
+/* ===== GLASS ===== */
 .glass{
   background:var(--glass);
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
   border:1px solid var(--glass-border);
-  border-radius:14px;
+  border-radius:16px;
 }
 
 /* ===== HEADER ===== */
@@ -51,14 +52,13 @@ header{
 
 .logo{
   font-size:22px;
-  font-weight:700;
-  color:var(--green);
+  font-weight:800;
+  color:var(--red);
 }
 
 header button{
-  padding:6px 14px;
+  padding:6px 16px;
   border-radius:20px;
-  border:none;
   font-size:14px;
 }
 
@@ -69,15 +69,16 @@ header button{
 }
 
 .register-btn{
-  background:var(--green);
-  color:#000;
+  background:linear-gradient(135deg,var(--red),var(--red-dark));
+  color:#fff;
+  border:none;
   margin-left:6px;
 }
 
 /* ===== HERO ===== */
 .hero{
   margin:12px;
-  padding:22px;
+  padding:24px;
 }
 
 .hero h1{
@@ -95,9 +96,9 @@ header button{
   width:100%;
   padding:14px;
   border:none;
-  border-radius:12px;
-  background:linear-gradient(135deg,#00ff66,#00cc55);
-  color:#000;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--red),var(--red-dark));
+  color:#fff;
   font-weight:700;
 }
 
@@ -108,9 +109,9 @@ header button{
 
 .section h2{
   font-size:18px;
-  margin-bottom:10px;
+  margin-bottom:12px;
   padding-left:10px;
-  border-left:4px solid var(--green);
+  border-left:4px solid var(--red);
 }
 
 /* ===== GRID ===== */
@@ -132,7 +133,7 @@ header button{
 .card h3{
   margin-top:8px;
   font-size:14px;
-  color:var(--green);
+  color:var(--red);
 }
 
 .card p{
@@ -147,14 +148,14 @@ header button{
   display:none;
   align-items:center;
   justify-content:center;
-  background:rgba(0,0,0,.6);
-  z-index:10;
+  background:rgba(0,0,0,.65);
+  z-index:20;
 }
 
 .modal-content{
   width:90%;
   max-width:360px;
-  padding:22px;
+  padding:24px;
 }
 
 .modal-content h2{
@@ -166,7 +167,7 @@ header button{
   width:100%;
   padding:12px;
   margin-top:10px;
-  border-radius:10px;
+  border-radius:12px;
   border:none;
   background:rgba(255,255,255,.12);
   color:#fff;
@@ -177,21 +178,21 @@ header button{
   width:100%;
   padding:12px;
   border:none;
-  border-radius:12px;
-  background:var(--green);
-  color:#000;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--red),var(--red-dark));
+  color:#fff;
   font-weight:700;
 }
 
 .modal-content p{
-  margin-top:10px;
+  margin-top:12px;
   font-size:13px;
   color:var(--muted);
   text-align:center;
 }
 
 .modal-content a{
-  color:var(--green);
+  color:var(--red);
   text-decoration:none;
 }
 
@@ -220,7 +221,7 @@ header button{
 }
 
 .bottom-nav a.active{
-  color:var(--green);
+  color:var(--red);
 }
 
 @media(min-width:768px){
@@ -242,7 +243,7 @@ header button{
 
 <div class="hero glass">
   <h1>Premium Casino Experience 🎰</h1>
-  <p>iOS-style glass UI • Fast • Secure • Luxury</p>
+  <p>Luxury red & black • Glass UI • Mobile first</p>
   <button onclick="openRegister()">Join Now</button>
 </div>
 
