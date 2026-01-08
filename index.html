@@ -1,236 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dhakabet | Online Casino & Sports</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Dhakabet – Online Casino & Sports</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root{
-      --bg-black:#000000;
-      --dark:#0b0b0b;
-      --green:#00ff66;
-      --green-dark:#00cc55;
-      --text:#ffffff;
-      --muted:#9ca3af;
-    }
+<style>
+:root{
+  --bg:#000;
+  --panel:#0c0c0c;
+  --card:#111;
+  --green:#00ff66;
+  --text:#fff;
+  --muted:#9aa0a6;
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;}
 
-    body{
-      background:var(--bg-black);
-      color:var(--text);
-    }
+body{
+  background:var(--bg);
+  color:var(--text);
+}
 
-    /* ===== HEADER ===== */
-    header{
-      background:var(--dark);
-      padding:15px 30px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      border-bottom:1px solid rgba(0,255,102,.2);
-    }
+/* ===== HEADER ===== */
+header{
+  height:60px;
+  background:var(--panel);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 15px;
+  border-bottom:1px solid rgba(0,255,102,.2);
+}
 
-    .logo{
-      font-size:26px;
-      font-weight:bold;
-      color:var(--green);
-    }
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:var(--green);
+}
 
-    nav a{
-      margin:0 15px;
-      color:#fff;
-      text-decoration:none;
-      font-weight:500;
-    }
+.auth button{
+  padding:6px 14px;
+  border-radius:4px;
+  border:none;
+  font-size:14px;
+}
 
-    nav a:hover{
-      color:var(--green);
-    }
+.login{
+  background:transparent;
+  color:#fff;
+  border:1px solid var(--green);
+}
 
-    .auth button{
-      padding:8px 16px;
-      border:none;
-      margin-left:10px;
-      cursor:pointer;
-      font-weight:bold;
-      border-radius:4px;
-    }
+.register{
+  background:var(--green);
+  color:#000;
+  margin-left:6px;
+}
 
-    .login{
-      background:transparent;
-      color:#fff;
-      border:1px solid var(--green);
-    }
+/* ===== HERO ===== */
+.hero{
+  padding:25px 15px;
+  background:linear-gradient(180deg,#020202,#000);
+}
 
-    .register{
-      background:var(--green);
-      color:#000;
-    }
+.hero-card{
+  background:linear-gradient(135deg,#00ff6655,#003311);
+  border-radius:12px;
+  padding:20px;
+}
 
-    /* ===== HERO ===== */
-    .hero{
-      padding:80px 20px;
-      text-align:center;
-      background:linear-gradient(180deg,#000,#050505);
-    }
+.hero-card h1{
+  font-size:24px;
+}
 
-    .hero h1{
-      font-size:48px;
-      margin-bottom:15px;
-    }
+.hero-card p{
+  color:#e5ffe5;
+  margin-top:6px;
+  font-size:14px;
+}
 
-    .hero span{
-      color:var(--green);
-    }
+.hero-card button{
+  margin-top:15px;
+  padding:12px;
+  width:100%;
+  border:none;
+  border-radius:6px;
+  background:var(--green);
+  color:#000;
+  font-weight:700;
+}
 
-    .hero p{
-      color:var(--muted);
-      max-width:600px;
-      margin:0 auto 30px;
-    }
+/* ===== SECTION ===== */
+.section{
+  padding:20px 15px;
+}
 
-    .hero button{
-      padding:14px 30px;
-      background:var(--green);
-      border:none;
-      color:#000;
-      font-size:18px;
-      cursor:pointer;
-      border-radius:6px;
-    }
+.section h2{
+  font-size:18px;
+  margin-bottom:12px;
+  border-left:4px solid var(--green);
+  padding-left:10px;
+}
 
-    /* ===== SECTIONS ===== */
-    section{
-      padding:60px 30px;
-    }
+/* ===== GAME GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
 
-    .section-title{
-      font-size:28px;
-      margin-bottom:25px;
-      border-left:5px solid var(--green);
-      padding-left:15px;
-    }
+.card{
+  background:var(--card);
+  border-radius:10px;
+  padding:18px 12px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,.05);
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
+.card span{
+  font-size:30px;
+}
 
-    .card{
-      background:#0d0d0d;
-      padding:25px;
-      border-radius:10px;
-      border:1px solid rgba(0,255,102,.15);
-      transition:.3s;
-    }
+.card h3{
+  margin-top:8px;
+  font-size:14px;
+  color:var(--green);
+}
 
-    .card:hover{
-      transform:translateY(-5px);
-      border-color:var(--green);
-    }
+.card p{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px;
+}
 
-    .card h3{
-      margin-bottom:10px;
-      color:var(--green);
-    }
+/* ===== BOTTOM NAV ===== */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:60px;
+  background:var(--panel);
+  display:flex;
+  border-top:1px solid rgba(0,255,102,.2);
+}
 
-    .card p{
-      color:var(--muted);
-      font-size:14px;
-    }
+.bottom-nav a{
+  flex:1;
+  text-align:center;
+  color:#ccc;
+  text-decoration:none;
+  font-size:12px;
+  padding-top:8px;
+}
 
-    /* ===== FOOTER ===== */
-    footer{
-      background:#050505;
-      padding:30px;
-      text-align:center;
-      color:#777;
-      font-size:14px;
-      border-top:1px solid rgba(0,255,102,.2);
-    }
+.bottom-nav a.active{
+  color:var(--green);
+}
 
-    @media(max-width:768px){
-      nav{
-        display:none;
-      }
-    }
-  </style>
+.bottom-nav span{
+  display:block;
+  font-size:20px;
+}
+
+/* ===== DESKTOP ===== */
+@media(min-width:768px){
+  .grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+  .bottom-nav{
+    display:none;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">Dhakabet</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Casino</a>
-      <a href="#">Sports</a>
-      <a href="#">Live Games</a>
-      <a href="#">Promotions</a>
-    </nav>
-    <div class="auth">
-      <button class="login">Login</button>
-      <button class="register">Register</button>
-    </div>
-  </header>
+<header>
+  <div class="logo">Dhakabet</div>
+  <div class="auth">
+    <button class="login">Login</button>
+    <button class="register">Register</button>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Welcome to <span>Dhakabet</span></h1>
-    <p>Play casino games, bet on sports, and enjoy premium gaming experience with secure & fast service.</p>
+<div class="hero">
+  <div class="hero-card">
+    <h1>Play & Win Big 🎰</h1>
+    <p>Premium casino & sports betting experience</p>
     <button>Join Now</button>
   </div>
+</div>
 
-  <!-- CASINO -->
-  <section>
-    <div class="section-title">🎰 Casino Games</div>
-    <div class="grid">
-      <div class="card">
-        <h3>Slots</h3>
-        <p>High payout slot games with exciting bonuses.</p>
-      </div>
-      <div class="card">
-        <h3>Live Casino</h3>
-        <p>Real dealers, real fun, live streaming casino.</p>
-      </div>
-      <div class="card">
-        <h3>Table Games</h3>
-        <p>Roulette, Blackjack, Baccarat & more.</p>
-      </div>
-    </div>
-  </section>
+<div class="section">
+  <h2>Casino Games</h2>
+  <div class="grid">
+    <div class="card"><span>🎰</span><h3>Slots</h3><p>High RTP games</p></div>
+    <div class="card"><span>🎲</span><h3>Live Casino</h3><p>Real dealers</p></div>
+    <div class="card"><span>🃏</span><h3>Card Games</h3><p>Blackjack & more</p></div>
+    <div class="card"><span>🎯</span><h3>Crash</h3><p>Instant win</p></div>
+  </div>
+</div>
 
-  <!-- SPORTS -->
-  <section>
-    <div class="section-title">⚽ Sports Betting</div>
-    <div class="grid">
-      <div class="card">
-        <h3>Cricket</h3>
-        <p>Live odds & international matches.</p>
-      </div>
-      <div class="card">
-        <h3>Football</h3>
-        <p>World leagues & live betting.</p>
-      </div>
-      <div class="card">
-        <h3>Basketball</h3>
-        <p>Fast betting with high odds.</p>
-      </div>
-    </div>
-  </section>
+<div class="section">
+  <h2>Sports Betting</h2>
+  <div class="grid">
+    <div class="card"><span>🏏</span><h3>Cricket</h3><p>Live odds</p></div>
+    <div class="card"><span>⚽</span><h3>Football</h3><p>Top leagues</p></div>
+    <div class="card"><span>🏀</span><h3>Basketball</h3><p>Fast bets</p></div>
+    <div class="card"><span>🎾</span><h3>Tennis</h3><p>Live matches</p></div>
+  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Dhakabet. All Rights Reserved. | 18+ Play Responsibly
-  </footer>
+<div style="height:70px"></div>
+
+<nav class="bottom-nav">
+  <a class="active"><span>🏠</span>Home</a>
+  <a><span>🎰</span>Casino</a>
+  <a><span>⚽</span>Sports</a>
+  <a><span>👤</span>Account</a>
+</nav>
 
 </body>
 </html>
