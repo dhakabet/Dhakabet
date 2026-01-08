@@ -2,35 +2,51 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dhakabet – Online Casino & Sports</title>
+<title>Dhakabet – Premium Casino</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 :root{
-  --bg:#000;
-  --panel:#0c0c0c;
-  --card:#111;
+  --bg:#050505;
+  --glass:rgba(255,255,255,0.08);
+  --glass-border:rgba(255,255,255,0.18);
   --green:#00ff66;
-  --text:#fff;
-  --muted:#9aa0a6;
+  --text:#ffffff;
+  --muted:#9ca3af;
+  --blur:18px;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto;
+}
 
 body{
-  background:var(--bg);
+  background:
+    radial-gradient(circle at top,#00331a,#050505 60%);
   color:var(--text);
+  min-height:100vh;
+}
+
+/* ===== GLASS BASE ===== */
+.glass{
+  background:var(--glass);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border:1px solid var(--glass-border);
+  border-radius:14px;
 }
 
 /* ===== HEADER ===== */
 header{
   height:60px;
-  background:var(--panel);
+  margin:12px;
+  padding:0 16px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 15px;
-  border-bottom:1px solid rgba(0,255,102,.2);
 }
 
 .logo{
@@ -39,20 +55,20 @@ header{
   color:var(--green);
 }
 
-.auth button{
+header button{
   padding:6px 14px;
-  border-radius:4px;
+  border-radius:20px;
   border:none;
   font-size:14px;
 }
 
-.login{
+.login-btn{
   background:transparent;
   color:#fff;
-  border:1px solid var(--green);
+  border:1px solid var(--glass-border);
 }
 
-.register{
+.register-btn{
   background:var(--green);
   color:#000;
   margin-left:6px;
@@ -60,50 +76,44 @@ header{
 
 /* ===== HERO ===== */
 .hero{
-  padding:25px 15px;
-  background:linear-gradient(180deg,#020202,#000);
+  margin:12px;
+  padding:22px;
 }
 
-.hero-card{
-  background:linear-gradient(135deg,#00ff6655,#003311);
-  border-radius:12px;
-  padding:20px;
+.hero h1{
+  font-size:26px;
 }
 
-.hero-card h1{
-  font-size:24px;
-}
-
-.hero-card p{
-  color:#e5ffe5;
+.hero p{
   margin-top:6px;
   font-size:14px;
+  color:var(--muted);
 }
 
-.hero-card button{
-  margin-top:15px;
-  padding:12px;
+.hero button{
+  margin-top:14px;
   width:100%;
+  padding:14px;
   border:none;
-  border-radius:6px;
-  background:var(--green);
+  border-radius:12px;
+  background:linear-gradient(135deg,#00ff66,#00cc55);
   color:#000;
   font-weight:700;
 }
 
 /* ===== SECTION ===== */
 .section{
-  padding:20px 15px;
+  margin:12px;
 }
 
 .section h2{
   font-size:18px;
-  margin-bottom:12px;
-  border-left:4px solid var(--green);
+  margin-bottom:10px;
   padding-left:10px;
+  border-left:4px solid var(--green);
 }
 
-/* ===== GAME GRID ===== */
+/* ===== GRID ===== */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -111,15 +121,12 @@ header{
 }
 
 .card{
-  background:var(--card);
-  border-radius:10px;
-  padding:18px 12px;
+  padding:18px 10px;
   text-align:center;
-  border:1px solid rgba(255,255,255,.05);
 }
 
 .card span{
-  font-size:30px;
+  font-size:28px;
 }
 
 .card h3{
@@ -131,7 +138,61 @@ header{
 .card p{
   font-size:12px;
   color:var(--muted);
-  margin-top:4px;
+}
+
+/* ===== MODAL ===== */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.6);
+  z-index:10;
+}
+
+.modal-content{
+  width:90%;
+  max-width:360px;
+  padding:22px;
+}
+
+.modal-content h2{
+  text-align:center;
+  margin-bottom:12px;
+}
+
+.modal-content input{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:10px;
+  border:none;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+}
+
+.modal-content button{
+  margin-top:14px;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:var(--green);
+  color:#000;
+  font-weight:700;
+}
+
+.modal-content p{
+  margin-top:10px;
+  font-size:13px;
+  color:var(--muted);
+  text-align:center;
+}
+
+.modal-content a{
+  color:var(--green);
+  text-decoration:none;
 }
 
 /* ===== BOTTOM NAV ===== */
@@ -141,22 +202,16 @@ header{
   left:0;
   right:0;
   height:60px;
-  background:var(--panel);
   display:flex;
-  border-top:1px solid rgba(0,255,102,.2);
+  margin:10px;
 }
 
 .bottom-nav a{
   flex:1;
   text-align:center;
+  font-size:12px;
   color:#ccc;
   text-decoration:none;
-  font-size:12px;
-  padding-top:8px;
-}
-
-.bottom-nav a.active{
-  color:var(--green);
 }
 
 .bottom-nav span{
@@ -164,64 +219,106 @@ header{
   font-size:20px;
 }
 
-/* ===== DESKTOP ===== */
+.bottom-nav a.active{
+  color:var(--green);
+}
+
 @media(min-width:768px){
-  .grid{
-    grid-template-columns:repeat(4,1fr);
-  }
-  .bottom-nav{
-    display:none;
-  }
+  .grid{grid-template-columns:repeat(4,1fr);}
+  .bottom-nav{display:none;}
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="glass">
   <div class="logo">Dhakabet</div>
-  <div class="auth">
-    <button class="login">Login</button>
-    <button class="register">Register</button>
+  <div>
+    <button class="login-btn" onclick="openLogin()">Login</button>
+    <button class="register-btn" onclick="openRegister()">Register</button>
   </div>
 </header>
 
-<div class="hero">
-  <div class="hero-card">
-    <h1>Play & Win Big 🎰</h1>
-    <p>Premium casino & sports betting experience</p>
-    <button>Join Now</button>
+<div class="hero glass">
+  <h1>Premium Casino Experience 🎰</h1>
+  <p>iOS-style glass UI • Fast • Secure • Luxury</p>
+  <button onclick="openRegister()">Join Now</button>
+</div>
+
+<div class="section">
+  <h2>Casino</h2>
+  <div class="grid">
+    <div class="card glass"><span>🎰</span><h3>Slots</h3><p>High RTP</p></div>
+    <div class="card glass"><span>🎲</span><h3>Live</h3><p>Real dealers</p></div>
+    <div class="card glass"><span>🃏</span><h3>Cards</h3><p>Blackjack</p></div>
+    <div class="card glass"><span>🎯</span><h3>Crash</h3><p>Instant win</p></div>
   </div>
 </div>
 
 <div class="section">
-  <h2>Casino Games</h2>
+  <h2>Sports</h2>
   <div class="grid">
-    <div class="card"><span>🎰</span><h3>Slots</h3><p>High RTP games</p></div>
-    <div class="card"><span>🎲</span><h3>Live Casino</h3><p>Real dealers</p></div>
-    <div class="card"><span>🃏</span><h3>Card Games</h3><p>Blackjack & more</p></div>
-    <div class="card"><span>🎯</span><h3>Crash</h3><p>Instant win</p></div>
+    <div class="card glass"><span>🏏</span><h3>Cricket</h3><p>Live odds</p></div>
+    <div class="card glass"><span>⚽</span><h3>Football</h3><p>Top leagues</p></div>
+    <div class="card glass"><span>🏀</span><h3>Basketball</h3><p>Fast bets</p></div>
+    <div class="card glass"><span>🎾</span><h3>Tennis</h3><p>Live</p></div>
   </div>
 </div>
 
-<div class="section">
-  <h2>Sports Betting</h2>
-  <div class="grid">
-    <div class="card"><span>🏏</span><h3>Cricket</h3><p>Live odds</p></div>
-    <div class="card"><span>⚽</span><h3>Football</h3><p>Top leagues</p></div>
-    <div class="card"><span>🏀</span><h3>Basketball</h3><p>Fast bets</p></div>
-    <div class="card"><span>🎾</span><h3>Tennis</h3><p>Live matches</p></div>
-  </div>
-</div>
+<div style="height:80px"></div>
 
-<div style="height:70px"></div>
-
-<nav class="bottom-nav">
+<nav class="bottom-nav glass">
   <a class="active"><span>🏠</span>Home</a>
   <a><span>🎰</span>Casino</a>
   <a><span>⚽</span>Sports</a>
-  <a><span>👤</span>Account</a>
+  <a onclick="openLogin()"><span>👤</span>Account</a>
 </nav>
+
+<!-- LOGIN -->
+<div class="modal" id="loginModal">
+  <div class="modal-content glass">
+    <h2>Login</h2>
+    <input placeholder="Email or Phone">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+    <p>No account? <a onclick="switchRegister()">Register</a></p>
+  </div>
+</div>
+
+<!-- REGISTER -->
+<div class="modal" id="registerModal">
+  <div class="modal-content glass">
+    <h2>Create Account</h2>
+    <input placeholder="Full Name">
+    <input placeholder="Email or Phone">
+    <input type="password" placeholder="Password">
+    <button>Sign Up</button>
+    <p>Already have account? <a onclick="switchLogin()">Login</a></p>
+  </div>
+</div>
+
+<script>
+function openLogin(){
+  document.getElementById('loginModal').style.display='flex';
+}
+function openRegister(){
+  document.getElementById('registerModal').style.display='flex';
+}
+function switchRegister(){
+  document.getElementById('loginModal').style.display='none';
+  openRegister();
+}
+function switchLogin(){
+  document.getElementById('registerModal').style.display='none';
+  openLogin();
+}
+window.onclick=function(e){
+  if(e.target.classList.contains('modal')){
+    e.target.style.display='none';
+  }
+}
+</script>
 
 </body>
 </html>
