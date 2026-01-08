@@ -50,12 +50,20 @@ header{
   justify-content:space-between;
 }
 
+/* ===== LOGO ===== */
 .logo{
   font-size:22px;
   font-weight:800;
+  letter-spacing:.5px;
+}
+.logo .dhaka{
+  color:#ffffff;
+}
+.logo .bet{
   color:var(--red);
 }
 
+/* ===== HEADER BUTTONS ===== */
 header button{
   padding:6px 16px;
   border-radius:20px;
@@ -234,7 +242,9 @@ header button{
 <body>
 
 <header class="glass">
-  <div class="logo">Dhakabet</div>
+  <div class="logo">
+    <span class="dhaka">Dhaka</span><span class="bet">bet</span>
+  </div>
   <div>
     <button class="login-btn" onclick="openLogin()">Login</button>
     <button class="register-btn" onclick="openRegister()">Register</button>
@@ -243,7 +253,7 @@ header button{
 
 <div class="hero glass">
   <h1>Premium Casino Experience 🎰</h1>
-  <p>Luxury red & black • Glass UI • Mobile first</p>
+  <p>Red • White • Black luxury glass casino UI</p>
   <button onclick="openRegister()">Join Now</button>
 </div>
 
